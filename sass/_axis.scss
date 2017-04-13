@@ -1,0 +1,53 @@
+.ui-brush {
+	position:absolute;
+	bottom:0;right:0;left:0;
+	height:100px;
+}
+
+.brush .extent {
+	stroke:#fff;
+	fill-opacity:0.125;
+	shape-rendering:crispEdges;
+	z-index: 100;
+}
+
+.grid-background {
+  fill: rgba(200, 200, 200, .6);
+}
+
+.grid line {
+  stroke: #fff;
+}
+
+.grid .minor line {
+  stroke-opacity: .5;
+}
+
+.grid text {
+  display: none;
+}
+
+.axis line {
+  stroke: #000;
+}
+
+.axis path,
+.grid path {
+  display: none;
+}
+
+.axis {
+	.tick text {
+		fill: gray;
+	}
+	&.axis--x {
+		.tick line {
+			display: none;
+		}
+	}
+	&.axis--y {
+		.tick line {
+			display: none;
+		}
+	}
+}
