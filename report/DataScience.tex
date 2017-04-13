@@ -52,6 +52,8 @@
 
 
 \documentclass[conference]{IEEEtran}
+
+\usepackage{csquotes}
 % Some Computer Society conferences also require the compsoc mode option,
 % but others use the standard conference format.
 %
@@ -320,7 +322,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Predicting ATM attacks using a Naive Bayes classifier}
+\title{Predicting and visualising ATM attacks}
 
 
 % author names and affiliations
@@ -384,22 +386,30 @@ University of Twente\\
 
 \section{Introduction} \label{introduction}
 % no \IEEEPARstart
-Lorem Ipsum
+
+ATM attacks and fraud continue to make headlines. The compromise of ATMs is a very lucrative criminal business. ATMs typically exist as physical contact points of the banking infrastructure that are exposed to public sight. This makes ATMs a very accessible target for exploitation, vulnerable to a large variety of attack scenarios. The European ATM Security Team report that the amount of ATM attacks both physical- and logical attacks only increase \cite{c1}, therefore securing ATMs but also predicting ATM attacks are more important then ever.
+
+This paper describes the process of both visualising ATM attacks and predicting cases where ATM attacks could occur. The main focus of this of this research is the exploration of using tools provided in the DM- and DPV topics provided in the Data Science course. Furthermore other tools such as the Python machine learning library Scikit-learn and JavaScript data visualisation library D3.js will be used.
 
 \subsection{The Dataset}
-Lorem Ipsum. 
+Provided for this project is a dataset from the European TREsPASS project  \cite{c2} that was developed in collaboration with Spanish banks. The dataset contains information of 723 ATMs, attacks on those ATMs and the information about those attacks. In more detail, the dataset provides: geographical details about ATMs (such as latitude and longitude coordinates, distance to a highway), demographic details (such as per capita income, population density, median population age), logging details of the attacks per ATM, the profile of the involved attacker, the information on how much amount was recovered and when did recovery event took place.
+
+For this research the most important features of the dataset are both the geographical- and demographical features. Those features can be used for both visualising attacks and predicting attacks using a classifier with those features as an input.
 
 \subsection{Research Questions} \label{questions}
-The problem statement and motivation lead to the following research questions:
+With the DataScience DM and DPV topics in mind this lead to the following research questions:
 
-\textit{How can diagnosed paralinguistic features in speech be used to create automatic disease classification systems?}
+\begin{displayquote}
+	How can a dataset containing geographical- and demographical features of ATM attacks be predicted and visualised?
+\end{displayquote}
 
 This question is answered with the support of the following questions:  
 
 \begin{itemize}
-\item Is accurate disease detection merely based on paralinguistic features possible?
-\item What are sensible features that could be used in the automatic classification of a certain disease?
-\item How do such classification systems behave across different languages?
+\item Which factors contribute most to attack frequency and attacker success?
+\item How can factors that contribute to attack frequency and attacker success be plotted geographically?
+\item How can ATM attacks be predicted using a Naive Bayes classifier?
+
 \end{itemize}
 
 % An example of a floating figure using the graphicx package.
@@ -541,7 +551,9 @@ Lorem Ipsum
 \begin{thebibliography}{1}
 
 \bibitem{c1}
-R. Calvo, S. D’Mello, J. Gratch, A. Kappas, C.-C. Lee, J. Kim, A. Metallinou, C. Busso, S. Lee, and S. S. Narayanan, “Speech in Affective Computing,” in The Oxford Handbook of Affective Computing, 2015 [Online]. Available: http://dx.doi.org/10.1093/oxfordhb/9780199942237.013.021
+“European ATM Crime Report Archives | European ATM Security Team,” European ATM Security Team. [Online]. Available: https://www.european-atm-security.eu/tag/european-atm-crime-report/. [Accessed: 13-Apr-2017]
+\bibitem{c2} 
+“The TREsPASS Project.” [Online]. Available: https://www.trespass-project.eu. [Accessed: 13-Apr-2017]
 
 \end{thebibliography}
 
