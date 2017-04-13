@@ -320,13 +320,13 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Automatic disease detection using paralinguistic features}
+\title{Predicting ATM attacks using a Naive Bayes classifier}
 
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Bouke Regnerus}
+\author{\IEEEauthorblockN{Bouke Regnerus and Raoul Fasel}
 \IEEEauthorblockA{Faculty of Electrical Engineering, Mathematics and Computer Science \\
 University of Twente\\
 7500 AE Enschede, The Netherlands}}
@@ -384,15 +384,23 @@ University of Twente\\
 
 \section{Introduction} \label{introduction}
 % no \IEEEPARstart
+Lorem Ipsum
 
+\subsection{The Dataset}
+Lorem Ipsum. 
 
-Voice is the main form of human communication. Vocal communication and it's role is essential in all areas of life, both in a professional as well as in personal life. Humans use vocal communication for, amongst other things, expressing feelings, the transmission of knowledge and other day to day social interactions. Speech encodes both linguistic intent as well as paralinguistic information such as emotion, age and gender. \cite{c1}
+\subsection{Research Questions} \label{questions}
+The problem statement and motivation lead to the following research questions:
 
-People suffering from certain medical diseases can have great difficulty with using vocal communication. Often this difficulty is associated with respiratory, nasal, neural and larynx diseases. Therefore the study of Paralinguistics in vocal disorders have become an important medical procedure.
+\textit{How can diagnosed paralinguistic features in speech be used to create automatic disease classification systems?}
 
-Paralinguistics, communicative vocal aspects that are typically not linguistic, contains extralinguistic- and paralinguistic. Extralinguistic features can be physical aspects such as age, gender or physical stress or mental aspects such as a depression. Paralinguistic features can be a broad range of affective states, feelings or emotions. \cite{c3}
+This question is answered with the support of the following questions:  
 
-This research proposal will explore the possibilities of developing a system for automatic disease detection using paralinguistic features.
+\begin{itemize}
+\item Is accurate disease detection merely based on paralinguistic features possible?
+\item What are sensible features that could be used in the automatic classification of a certain disease?
+\item How do such classification systems behave across different languages?
+\end{itemize}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -489,64 +497,24 @@ This research proposal will explore the possibilities of developing a system for
 % \fnbelowfloat command of the stfloats package.
 
 
-\section{Background and Related Work} \label{research}
-Related work has focused on the diagnosis of characteristic irregularities in voice patterns of patients with certain medical conditions. These features in voice patterns should form the basis for a system that tries to do an automatic detection and classification of medical diseases. Some research in the field of medical diseases and conditions such as Autism Spectrum Disorders, Alzheimer’s disease (AD) and Parkinson’s disease (PD) will be discussed in this section. Research which has been conducted on the diagnosis using linguistic or text-based features will not be discussed.
-
-\subsection{Autism Spectrum Disorders}
-Autism is a group of mental disorders, collectively called autism spectrum disorder (ASD). An individual with an autism spectrum disorder can have a wide range of symptoms that can result in many impairments such as social interaction, behavioural and communication skills. \cite{c4}
-Hoque et. al. have shown that individuals with an autism spectrum disorder produce speech with either high or low speech rate, and atypical pitch and/or amplitude affect (prosodic aspects). \cite{c5}
-
-\subsection{Alzheimer’s disease}
-Alzheimer’s disease is a common form of dementia. Common symptoms are: memory loss, confusion, irritability, aggression, trouble with language, and mood swings. While there is no known cure for this form of dementia, its effects can be delayed if therapy starts early. \cite{c6} Appell et. al. have proven that dementia and specifically Alzheimer’s disease affect human speech. \cite{c7} Satt et. al. describe an automatic classification technique using different focal features to classify different stages of Alzheimer's disease. Their research provides a classification accuracy of 87\% for the classification between the control group and patients with Alzheimer's disease, providing evidence for potential use for automatic detection of very early dementia. \cite{c8}
-
-In addition research by Weiner et. al. on speech-based detection of Alzheimer’s disease in conversational German shows a classification accuracy similar to the classification conducted by Satt et. al. in the English language. \cite{c9} 
-
-\subsection{Parkinson's disease}
-Parkinson's disease is a chronic and progressive movement disorder. The cause is unknown, and although there is presently no cure, there are treatment options such as medication and surgery to manage its symptoms. \cite{c10} Parkinson’s disease is strongly associated with voice changes. One of the symptoms of Parkinson's disease, tremor, is also apparent in an individual's voice. Voice tremor is linked to frequency/pitch and amplitude/loudness perturbation. \cite{c11}
-
-Research by Villa-Can ̃as et. al. explore a method for automatic detection of Parkinson’s disease using a joint acoustic and modulation frequency representation. Their classification one by means of a Gaussian mixture model, shows that the approach can classify individuals between a control group and with Parkinson's disease with an accuracy of around 71\%. \cite{c12}
-
-
-\section{Problem Statement and Motivation}
-For the medical diseases and conditions that were described, Autism Spectrum Disorders, Alzheimer’s disease (AD) and Parkinson’s disease (PD), it is important that diagnosis of these diseases can happen as soon as possible. As an illustration: in the case of Alzheimer’s it is estimated that about half of individuals suffering from the disease have not been diagnosed. \cite{c13} Furthermore the Alzheimer's association reports numerous benefits of an early diagnosis of Alzheimer's disease to help affected individuals and their families. \cite{c14}
-
-A few problems however arise that in many cases prevent the early diagnosis of the described medical diseases and conditions. In many cases a large group of individuals would have to be examined at regular intervals for certain diseases such as Alzheimer's disease. Research for these diseases  and conditions would not only be costly but would also require a large amount of time for medical professionals and other caretakers which are conducting all these examinations.
-
-If research would indicate that an automatic disease detection system could accurately classify certain medical diseases and conditions it could be used as a system for an accurate pre-examination, therefore vastly decreasing the amount of examinations which have to be conducted by the medical professionals and other caretakers therefore reducing their workload and the overall costs of these examinations. 
-
-
-\section{Research Questions} \label{questions}
-The problem statement and motivation lead to the following research questions:
-
-\textit{How can diagnosed paralinguistic features in speech be used to create automatic disease classification systems?}
-
-This question is answered with the support of the following questions:  
-
-\begin{itemize}
-\item Is accurate disease detection merely based on paralinguistic features possible?
-\item What are sensible features that could be used in the automatic classification of a certain disease?
-\item How do such classification systems behave across different languages?
-\end{itemize}
-
 \section{Method} \label{method}
 To give an accurate answer the above mentioned research questions multiple different tasks have to be conducted. 
 
-One could argue if it is feasible to focus on all of the above mentioned medical diseases and conditions or if further research should narrow down on to one specific disease and merely focus on that disease. If it is decided to focus on one disease also the choice of this disease is important, a research study could be conducted to find the medical diseases or condition that has to most potential for an automatic disease detection system. Personal motivation could also play a role in the choice to choose a disease or condition to focus on for further research.
-
-Furthermore an extensive literature study has to be conducted to establish a list of features which could used for the classification of a disease or condition. Already some research in the field of medical diseases and conditions such as Autism Spectrum Disorders, Alzheimer’s disease (AD) and Parkinson’s disease (PD) have been mentioned in section \ref{research}. Literature research could further expand into different diseases that have been linked to affect human speech. Furthermore based on the literature research, a table should be constructed with different paralinguistic- and linguistic features and their success in accurately classifying diseases. Such a table could help answer the question if it is possible to classify a certain disease merely based on paralinguistic features or if also linguistic features are needed in this case. 
-
-After conducting an extensive literature study, selecting a disease or diseases to focus further research on and selecting fitting (para)linguistic features an automatic system could be created for the detection and classification. Different feature extraction, such as PCA or Mel-frequency cepstrum, and classification techniques will have to be examined and evaluated. 
-
-Finally accuracy of such a system should be evaluated preferably across different languages to get a good understanding of the effects that different, languages, accents or cultural differences can have on such a classification system.
+Lorem Ipsum
 
 
+\subsection{Application of Topic DPV} \label{dpv}
+Lorem Ipsum
 
-\section{Scientific and social impact} \label{impact}
-Research on the automatic disease detection using paralinguistic feature could have valuable impact both scientific and socially.
 
-Scientifically a literature review across multiple conducted research could provide valuable insight in different paralinguistic- and linguistic features and their success in accurately classifying diseases. Furthermore research in feature extraction and classification techniques could help future research on similar scientific problems.
+\subsection{Application of Topic DM} \label{dm}
+Lorem Ipsum
 
-Socially, if research would indicate that an automatic disease detection system could accurately classify certain medical diseases and conditions, a disease detection system could have a large impact. As has been stated in section \ref{impact}, quality of life of patients could be drastically improved by an earlier diagnosis of some diseases. Furthermore the workload of medical professionals and other caretakers could be reduced as well as the overall costs associated with these diagnosis.
+\section{Results} \label{results}
+Lorem Ipsum
+
+\section{Conclusion and Discussion} \label{results}
+Lorem Ipsum
 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
@@ -574,45 +542,6 @@ Socially, if research would indicate that an automatic disease detection system 
 
 \bibitem{c1}
 R. Calvo, S. D’Mello, J. Gratch, A. Kappas, C.-C. Lee, J. Kim, A. Metallinou, C. Busso, S. Lee, and S. S. Narayanan, “Speech in Affective Computing,” in The Oxford Handbook of Affective Computing, 2015 [Online]. Available: http://dx.doi.org/10.1093/oxfordhb/9780199942237.013.021
-
-\bibitem{c2}
-D. Dixit, M. T. Student, D. of Ece, M. M. University, Mullana, Haryana, India, V. Mittal, and Y. Sharma, “Voice Parameter Analysis for the disease detection,” IOSR Journal of Electronics and Communication Engineering, vol. 9, no. 3, pp. 48–55, 2014 [Online]. Available: http://dx.doi.org/10.9790/2834-09314855
-
-\bibitem{c3}
-K. Truong, “Lecture Slides Speech Processing 2016-2017 Lecture 7” [Online]. [Accessed: 06-Feb-2017]
-
-\bibitem{c4}
-L. Kanner, “Irrelevant and metaphorical language in early infantile autism. 1946,” Am. J. Psychiatry, vol. 151, no. 6 Suppl, pp. 161–164, Jun. 1994 [Online]. Available: http://dx.doi.org/10.1176/ajp.151.6.161
-
-\bibitem{c5}
-M. E. Hoque, J. K. Lane, R. E. Kaliouby, M. S. Goodwin, and R. W. Picard, “Exploring speech therapy games with children on the autism spectrum.,” in INTERSPEECH, 2009, pp. 1455–1458 [Online]. Available: http://dblp.uni-trier.de/db/conf/interspeech/interspeech2009.html\#HoqueLKGP09
-
-\bibitem{c6}
-M. Prince, G.-C. Ali, M. Guerchet, A. Matthew Prina, E. Albanese, and Y.-T. Wu, “Recent global trends in the prevalence and incidence of dementia, and survival with dementia,” Alzheimers. Res. Ther., vol. 8, no. 1, 2016 [Online]. Available: http://dx.doi.org/10.1186/s13195-016-0188-8
-
-\bibitem{c7}
-J. Appell, A. Kertesz, and M. Fisman, “A study of language functioning in Alzheimer patients,” Brain Lang., vol. 17, no. 1, pp. 73–91, 1982 [Online]. Available: http://dx.doi.org/10.1016/0093-934x(82)90006-2
-
-\bibitem{c8}
-H. Tanaka, H. Adachi, N. Ukita, T. Kudo, and S. Nakamura, “Automatic detection of very early stage of dementia through multimodal interaction with computer avatars,” in Proceedings of the 18th ACM International Conference on Multimodal Interaction - ICMI 2016, 2016 [Online]. Available: http://dx.doi.org/10.1145/2993148.2993193
-
-\bibitem{c9}
-J. Weiner, C. Herff, and T. Schultz, “Speech-Based Detection of Alzheimer’s Disease in Conversational German.” in Interspeech 2016, 2016 [Online]. Available: http://dx.doi.org/10.21437/interspeech.2016-100
-
-\bibitem{c10}
-Parkinson’s Disease Foundation “What is Parkinson’s Disease? - Parkinson’s Disease Foundation (PDF).” [Online]. Available: http://www.pdf.org/about\_pd [Accessed: 06-Feb-2017]
-
-\bibitem{c11}
-P. Gillivan-Murphy, P. Carding, and N. Miller, “Vocal tract characteristics in Parkinsonʼs disease,” Curr. Opin. Otolaryngol. Head Neck Surg., vol. 24, no. 3, pp. 175–182, 2016 [Online]. Available: http://dx.doi.org/10.1097/moo.0000000000000252
-
-\bibitem{c12}
-T. Villa-Canas, J. R. Orozco-Arroyave, J. F. Vargas-Bonilla, and J. D. Arias-Londono, “Modulation spectra for automatic detection of Parkinson’s disease,” in 2014 XIX Symposium on Image, Signal Processing and Artificial Vision, 2014 [Online]. Available: http://dx.doi.org/10.1109/stsiva.2014.7010173
-
-\bibitem{c13}
-Alzheimer’s Association, “2015 Alzheimer’s disease facts and figures,” Alzheimers. Dement., vol. 11, no. 3, pp. 332–384, Mar. 2015 [Online]. Available: https://www.ncbi.nlm.nih.gov/pubmed/25984581
-
-\bibitem{c14}
-Alzheimer’s Association, “Early Detection and Diagnosis of Alzheimer’s Disease” [Online]. Available: https://www.alz.org/publichealth/downloads/policy-brief.pdf. [Accessed: 06-Feb-2017]
 
 \end{thebibliography}
 
