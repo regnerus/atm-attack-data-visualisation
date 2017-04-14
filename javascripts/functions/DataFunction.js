@@ -2,18 +2,19 @@ function drawData(dataset, map, prop, fill) {
     console.log('got here!');
     // get any existing circles
     var data = map.selectAll("circle").data(dataset)
+    var domain = [0, 1];
 
-    var radius = d3.scale.sqrt()
+    var radius = d3.scale.linear()
         .range(range(4, 16))
-        .domain([0, 1]);
+        .domain(domain);
 
-    var fillOpacity = d3.scale.sqrt()
+    var fillOpacity = d3.scale.linear()
         .range([.25, .50])
         .domain([0, 10000]);
                    //colours can be specified as any CSS colour string
-    function normalise (val, max, min) {
-        return radius(Math.abs((val - min) / (max - min)));
-    }
+    // function normalise (val, max, min) {
+    //     return radius(Math.abs((val - min) / (max - min)));
+    // }
 
     data.enter()
         .append("circle")
@@ -47,40 +48,59 @@ function drawData(dataset, map, prop, fill) {
         })
         .duration(1000)
         .attr("r", function(d) {
+            var property;
+
             if (prop == "mway_dist") {
-                return normalise(d.properties.mway_dist, 4846, 4);
+                domain = [4, 4846];
+                property = d.properties.mway_dist;
             }
             else if(prop == "police_dis") {
-                return normalise(d.properties.police_dis, 1707, 3);
+                domain = [3, 1707];
+                property = d.properties.police_dis;
             }
             else if(prop == "prob_attacked") {
-                return normalise(d.properties.prob_attacked, 1, 0);
+                domain = [0, 1];
+                property = d.properties.prob_attacked;
             }
             else if(prop == "unp_rate") {
-                return normalise(d.properties.unp_rate, 23, 2);
+                domain = [2, 23];
+                property = d.properties.unp_rate;
             }
             else if(prop == "age") {
-                return normalise(d.properties.age, 65, 25);
+                domain = [25, 65];
+                property = d.properties.age;
             }
             else if(prop == "income") {
-                return normalise(d.properties.income, 72, 14);
+                domain = [14, 72];
+                property = d.properties.income;
             }
             else if(prop == "density") {
-                return normalise(d.properties.density, 42, 0);
+                domain = [0, 42];
+                property = d.properties.density;
             }
             else if(prop == "com_dens") {
-                return normalise(d.properties.com_dens, 84, 9);
+                domain = [9, 84];
+                property = d.properties.com_dens;
             }
             else if(prop == "number") {
-                return normalise(d.properties.number, 3, 0);
+                domain = [0, 3];
+                property = d.properties.number;
             }
+
+            radius = d3.scale.linear()
+                .range(range(4, 16))
+                .domain(domain);
+
+            drawCircleLegend(d3.select('#circledatapoint'), domain, fill);
+
+            return radius(property);
         })
         .style("fill-opacity", .25)
         .attr("data-tooltip", function(d) {
             return d.properties.bank;
         });
 
-    // remove circles for old earthquakes no longer in data
+
     data.exit()
         .transition()
         .attr("r", 0)

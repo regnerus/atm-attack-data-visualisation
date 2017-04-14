@@ -3,11 +3,11 @@ function drawAttacks(dataset, map) {
     // get any existing circles
     var attacks = map.selectAll("circle").data(dataset)
 
-    var radius = d3.scale.sqrt()
+    var radius = d3.scale.linear()
         .range(range(4, 16))
         .domain([1, 5]);
 
-    var fillOpacity = d3.scale.sqrt()
+    var fillOpacity = d3.scale.linear()
         .range([.25, .50])
         .domain([0, 10000]);
 

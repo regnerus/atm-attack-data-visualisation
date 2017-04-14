@@ -3,11 +3,11 @@ function drawATMs(dataset, map) {
     // get any existing circles
     var places = map.selectAll("circle").data(dataset)
 
-    var colourScale = d3.scale.sqrt()
+    var colourScale = d3.scale.linear()
         .range([0, 1])
         .domain([0, 10000]);
 
-    var fillOpacity = d3.scale.sqrt()
+    var fillOpacity = d3.scale.linear()
         .range([.50, .75])
         .domain([1000, 800000]);
 

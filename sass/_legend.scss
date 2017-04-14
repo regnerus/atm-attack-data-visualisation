@@ -32,3 +32,34 @@
     margin-right: 0.4em;
   }
 }
+
+.legend {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.legend path,
+.legend line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    opacity: 1;
+}
+
+.circle-legend line {
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.circle-legend circle {
+    stroke: #ccc;
+    stroke-dasharray: 4, 2;
+}
+
+#circleattacks {
+    transform: translate(120px, 140px)
+}
+
+#circledatapoint {
+    transform: translate(300px, 140px)
+}

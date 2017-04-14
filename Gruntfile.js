@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 				separator: ';\n'
 			},
 			files: {
-				src: [	
+				src: [
 					/*
 					 *	Include D3.js
 					 */
@@ -36,12 +36,14 @@ module.exports = function(grunt) {
 					/*
 					 *	Include JS files
 					 */
-					'./javascripts/**/*.js',
+					'./javascripts/plugins/**/*.js',
+					'./javascripts/functions/**/*.js',
+					'./javascripts/application.js',
 				],
 				dest: './application.js'
 			}
 		},
-		
+
 		/*
 		 * Initialise SASS
 		 */

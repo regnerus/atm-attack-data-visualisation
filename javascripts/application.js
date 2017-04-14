@@ -25,7 +25,7 @@ var tooltip_atm = d3.select("body")
 
 var selected_prop = "";
 
-var main, map, data;
+var main, circlelegend, map, data;
 
 function init() {
 
@@ -39,6 +39,10 @@ function init() {
                                 })
                                 .call(zoom)
                                 .append("g");
+
+        circlelegend        = d3.select('#circlelegend').append('svg').attr("width", "100%");
+                              circlelegend.append("g").attr("id", "circleattacks");
+                              circlelegend.append("g").attr("id", "circledatapoint");
 
         map                 = {
                                 'freguesia'     : main.append("g").attr("id", "freguesia"),
@@ -61,6 +65,8 @@ function init() {
     ]);
 
     legend.draw();
+
+    drawCircleLegend(d3.select('#circleattacks'), [0,1], "#D0021B");
 
     draw();
 }
@@ -137,4 +143,28 @@ function move() {
         console.log(scale);
         throttle();
     }
+}
+
+function drawCircleLegend(legend, domain, color) {
+    color = color || "#D0021B";
+    domain = domain || [0.0, 1.0];
+
+    var scale = d3.scale.linear()
+        .range([0, 60])
+        .domain(domain)
+
+
+    // 1
+    var circleKey = circleLegend()
+       .scale(scale)
+       .color(color)
+       // Return falsey value from tickFormat to remove it
+       .ticks(4)
+
+    legend.selectAll("*").remove();
+
+    legend.append('g').call(circleKey);
+    legend.append('text').attr('dy', '0').text('test');
+
+
 }

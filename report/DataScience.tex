@@ -54,6 +54,13 @@
 \documentclass[conference]{IEEEtran}
 
 \usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\graphicspath{ {images/} }
 % Some Computer Society conferences also require the compsoc mode option,
 % but others use the standard conference format.
 %
@@ -508,20 +515,23 @@ This question is answered with the support of the following questions:
 
 
 \section{Method} \label{method}
-To give an accurate answer the above mentioned research questions multiple different tasks have to be conducted. 
-
-Lorem Ipsum
-
+To give an accurate answer the above mentioned research questions multiple different tasks have to be conducted. The tasks have been further separated in the application of topic DPV (\ref{dpv}) and the application of topic DM (\ref{dm}).
 
 \subsection{Application of Topic DPV} \label{dpv}
 Lorem Ipsum
-
 
 \subsection{Application of Topic DM} \label{dm}
 Lorem Ipsum
 
 \section{Results} \label{results}
 Lorem Ipsum
+
+{
+\centering
+\includegraphics[width=0.95\linewidth]{visualisation.png}\\
+\captionof{figure}{Visualisation of ATM attacks (red circles), Predicted ATM attacks (orange circles) and ATM locations (black dots) on the map of Lisbon. \cite{c3}}\label{fig:confusion}
+}
+
 
 \section{Conclusion and Discussion} \label{results}
 Lorem Ipsum
@@ -554,6 +564,8 @@ Lorem Ipsum
 “European ATM Crime Report Archives | European ATM Security Team,” European ATM Security Team. [Online]. Available: https://www.european-atm-security.eu/tag/european-atm-crime-report/. [Accessed: 13-Apr-2017]
 \bibitem{c2} 
 “The TREsPASS Project.” [Online]. Available: https://www.trespass-project.eu. [Accessed: 13-Apr-2017]
+\bibitem{c3}
+“ATM Attacks.” [Online]. Available: https://regnerus.github.io/atm-attack-data-visualisation/. [Accessed: 13-Apr-2017]
 
 \end{thebibliography}
 
