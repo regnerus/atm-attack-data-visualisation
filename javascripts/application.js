@@ -66,7 +66,7 @@ function init() {
 
     legend.draw();
 
-    drawCircleLegend(d3.select('#circleattacks'), [0,1], "#D0021B");
+    drawCircleLegend(d3.select('#circleattacks'), [0,1], "#D0021B", "Attack Frequency");
 
     draw();
 }
@@ -145,12 +145,12 @@ function move() {
     }
 }
 
-function drawCircleLegend(legend, domain, color) {
+function drawCircleLegend(legend, domain, color, title) {
     color = color || "#D0021B";
     domain = domain || [0.0, 1.0];
 
     var scale = d3.scale.linear()
-        .range([0, 60])
+        .range([0, 55])
         .domain(domain)
 
 
@@ -164,7 +164,7 @@ function drawCircleLegend(legend, domain, color) {
     legend.selectAll("*").remove();
 
     legend.append('g').call(circleKey);
-    legend.append('text').attr('dy', '0').text('test');
+    legend.append('text').attr('dy', '20px').attr('text-anchor', 'middle').text(title);
 
 
 }

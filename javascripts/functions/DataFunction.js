@@ -53,45 +53,54 @@ function drawData(dataset, map, prop, fill) {
             if (prop == "mway_dist") {
                 domain = [4, 4846];
                 property = d.properties.mway_dist;
+                title = "Moterway Distance";
             }
             else if(prop == "police_dis") {
                 domain = [3, 1707];
                 property = d.properties.police_dis;
+                title = "Police Distance";
             }
             else if(prop == "prob_attacked") {
                 domain = [0, 1];
                 property = d.properties.prob_attacked;
+                title = "Attack Probability";
             }
             else if(prop == "unp_rate") {
                 domain = [2, 23];
                 property = d.properties.unp_rate;
+                title = "Unenployment Rate";
             }
             else if(prop == "age") {
                 domain = [25, 65];
                 property = d.properties.age;
+                title = "Median Age";
             }
             else if(prop == "income") {
                 domain = [14, 72];
                 property = d.properties.income;
+                title = "Median Income";
             }
             else if(prop == "density") {
                 domain = [0, 42];
                 property = d.properties.density;
+                title = "Population Density";
             }
             else if(prop == "com_dens") {
                 domain = [9, 84];
                 property = d.properties.com_dens;
+                title = "Commercial Density";
             }
             else if(prop == "number") {
                 domain = [0, 3];
                 property = d.properties.number;
+                title = "Offenders Density";
             }
 
             radius = d3.scale.linear()
                 .range(range(4, 16))
                 .domain(domain);
 
-            drawCircleLegend(d3.select('#circledatapoint'), domain, fill);
+            drawCircleLegend(d3.select('#circledatapoint'), domain, fill, title);
 
             return radius(property);
         })
