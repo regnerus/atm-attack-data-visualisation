@@ -335,7 +335,7 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Bouke Regnerus and Raoul Fasel}
+\author{\IEEEauthorblockN{R. Fasel and B. Regnerus}
 \IEEEauthorblockA{Faculty of Electrical Engineering, Mathematics and Computer Science \\
 University of Twente\\
 7500 AE Enschede, The Netherlands}}
@@ -413,8 +413,8 @@ With the DataScience DM and DPV topics in mind this lead to the following resear
 This question is answered with the support of the following questions:  
 
 \begin{itemize}
-\item Which factors contribute most to attack frequency and attacker success?
 \item How can factors that contribute to attack frequency and attacker success be plotted geographically?
+\item Which factors contribute most to attack frequency and attacker success?
 \item How can ATM attacks be predicted using a Naive Bayes classifier?
 
 \end{itemize}
@@ -523,24 +523,70 @@ In this section we try to identify a good method for obtaining visualisation fro
 Using the two GeoJSON formatted datasets a visualisation was created in Javascript using D3.js. \cite{c5} The use of the D3.js library was chosen over other tools such as Tableau since it allows for more flexibility when developing visualisations. D3.js is able to read from the GeoJSON formatted files, using them as the datasource therefore no external database warehouse, such as MySQL, was needed. 
 
 \subsection{Application of Topic DM} \label{dm}
-Lorem Ipsum
+(TODO)
 
 \section{Results} \label{results}
 Following from \ref{method} (the method) a visualisation was developed in D3.js (\ref{dpvres}) together with a machine learning model created using a Naive Bayes classification method (\ref{dmres}).
 
 \subsection{Results of Topic DPV} \label{dpvres}
-The visualisation which was developed contains the outlines of the freguesias as a grey shape, on top of those shapes the ATMs are plotted geographically as black dots. ATMs which have been attacked have a red circle around them. The visualisation can be further explored by turning on- and off other visualisation layers. There can be chosen from a list of nine different features that will be visualised as circles on the map. Most prominently, the predicted attack probability can be visualised, this probability is the outcome of \ref{dm} (the Application of Topic DM) and will be further discussed in \ref{dmres} (Results of Topic DM). Other features that can be displayed are, inter alia, moterway distance, or police distance. These features were all present in the ATM attacks dataset.
+The visualisation which was developed contains the outlines of the freguesias as a grey shape, on top of those shapes the ATMs are plotted geographically as black dots. ATMs which have been attacked have a red circle around them. The visualisation can be further explored by turning on- and off other visualisation layers. There can be chosen from a list of nine different features that will be visualised as circles on the map. Most prominently, the predicted attack probability can be visualised, this probability is the outcome of \ref{dm} (the Application of Topic DM) and will be further discussed in \ref{dmres} (Results of Topic DM). Other features that can be displayed are, inter alia, moterway distance, or police distance. These features were all present in the ATM attacks dataset. The scale of the circles is explained by a circle legend giving the values of the corresponding circle size.
+
 {
 \centering
 \includegraphics[width=0.95\linewidth]{visualisation.png}\\
 \captionof{figure}{Visualisation of ATM attacks (red circles), Predicted ATM attacks (orange circles) and ATM locations (black dots) on the map of Lisbon. \cite{c3}}\label{fig:confusion}
 }
 
-\subsection{Results of Topic DM} \label{dmres}
 
+\subsection{Results of Topic DM} \label{dmres}
+(TODO)
+
+{
+\begin{center}
+\centering
+\captionof{table}{Performance results}\label{fig:results}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+& Precision & Recall & F1-score & Support                  
+\\ \midrule
+\multicolumn{1}{|l|}{XX}  & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0} 
+\\ \midrule
+
+\multicolumn{1}{|l|}{XX} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0} 
+
+\\ \midrule
+\multicolumn{1}{|l|}{XX}  & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0\%} & 
+\multicolumn{1}{l|}{0} 
+
+\\ \midrule
+avg / total & 0\% & 0\% & 0\% & 0                      
+
+\\ \bottomrule
+\end{tabular}
+\end{center}
+}
 
 \section{Conclusion and Discussion} \label{results}
-Lorem Ipsum
+According to the results from both the data visualisation and machine learning prediction, it is possible to accurately predict locations for ATM attacks and visualise the attacks with the geographical- and demographical features provided by the ATM attacks dataset.
+
+Since the data was labeled with latitude and longitude coordinates the visualisation created in D3.js proves that it is possible to plot attack frequency and attacker success geographically. There are however a few drawbacks from the visualisation. Since some locations, for example a bank, have multiple ATMs at the same location, the circles overlap and therefore can distort the visualisation. In addition all features are labeled to a specific ATM location, therefore some locations have a lot of demographical data available while other places have little data available.
+
+(EXPLAIN FACTORS WHICH CONTRIBUTE TO ATTACKS)
+
+(EXPLAIN RESULTS CLASSIFIER)
+
+Further research should be done to optimise the machine learning model even further. More datasources could be sourced as input features for the model. Furthermore there could be experimented with other types of classifiers to further improve the classification.
 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
