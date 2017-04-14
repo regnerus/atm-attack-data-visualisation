@@ -372,6 +372,18 @@ function drawAttacks(dataset, map) {
             return i / dataset.length * 200;
         })
         .duration(1000)
+        .attr("stroke", "#D0021B")
+        .attr("stroke-width", function(d) {
+            return 1
+        })
+        .attr("stroke-dasharray", function(d) {
+            if(d.properties.success_attack == 0) {
+                return "1,1";
+            }
+            else {
+                return "0,0";
+            }
+        })
         .attr("r", function(d) {
             return radius(Math.abs(d.properties.freq_attack));
         })
