@@ -518,19 +518,25 @@ This question is answered with the support of the following questions:
 To give an accurate answer the above mentioned research questions multiple different tasks have to be conducted. The tasks have been further separated in the application of topic DPV (\ref{dpv}) and the application of topic DM (\ref{dm}).
 
 \subsection{Application of Topic DPV} \label{dpv}
-Lorem Ipsum
+In this section we try to identify a good method for obtaining visualisation from the raw ATM attack dataset. Raw data was available in an ARFF format and a good description of each data column was also available. The data which was available was already in quite a clear format and did not need many transformations to make it available for visualisation. Therefore Pentaho Kettle was not used, instead basic transformations were performed to transform the ARFF file to a GeoJSON format using the Python language, since the data which is encoded consists of geographic data points this format seemed appropriate. For the visualisation we wanted to also show the contours of the freguesias (municipalities of Lisbon). This data was not available in the ATM attack dataset, however it was available under an Creative Commons licence from the Lisbon Open Data website \cite{c4}.
+
+Using the two GeoJSON formatted datasets a visualisation was created in Javascript using D3.js. \cite{c5} The use of the D3.js library was chosen over other tools such as Tableau since it allows for more flexibility when developing visualisations. D3.js is able to read from the GeoJSON formatted files, using them as the datasource therefore no external database warehouse, such as MySQL, was needed. 
 
 \subsection{Application of Topic DM} \label{dm}
 Lorem Ipsum
 
 \section{Results} \label{results}
-Lorem Ipsum
+Following from \ref{method} (the method) a visualisation was developed in D3.js (\ref{dpvres}) together with a machine learning model created using a Naive Bayes classification method (\ref{dmres}).
 
+\subsection{Results of Topic DPV} \label{dpvres}
+The visualisation which was developed contains the outlines of the freguesias as a grey shape, on top of those shapes the ATMs are plotted geographically as black dots. ATMs which have been attacked have a red circle around them. The visualisation can be further explored by turning on- and off other visualisation layers. There can be chosen from a list of nine different features that will be visualised as circles on the map. Most prominently, the predicted attack probability can be visualised, this probability is the outcome of \ref{dm} (the Application of Topic DM) and will be further discussed in \ref{dmres} (Results of Topic DM). Other features that can be displayed are, inter alia, moterway distance, or police distance. These features were all present in the ATM attacks dataset.
 {
 \centering
 \includegraphics[width=0.95\linewidth]{visualisation.png}\\
 \captionof{figure}{Visualisation of ATM attacks (red circles), Predicted ATM attacks (orange circles) and ATM locations (black dots) on the map of Lisbon. \cite{c3}}\label{fig:confusion}
 }
+
+\subsection{Results of Topic DM} \label{dmres}
 
 
 \section{Conclusion and Discussion} \label{results}
@@ -566,6 +572,10 @@ Lorem Ipsum
 “The TREsPASS Project.” [Online]. Available: https://www.trespass-project.eu. [Accessed: 13-Apr-2017]
 \bibitem{c3}
 “ATM Attacks.” [Online]. Available: https://regnerus.github.io/atm-attack-data-visualisation/. [Accessed: 13-Apr-2017]
+\bibitem{c4}
+“Câmara Municipal de Lisboa - Organisationer - Portal Dados Abertos.” [Online]. Available: http://dados.cm-lisboa.pt/sv/organization/camara-municipal-de-lisboa. [Accessed: 14-Apr-2017]
+\bibitem{c5} 
+M. Bostock, “D3.js - Data-Driven Documents.” [Online]. Available: https://d3js.org/. [Accessed: 14-Apr-2017]
 
 \end{thebibliography}
 
