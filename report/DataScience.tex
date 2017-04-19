@@ -529,9 +529,7 @@ Using the two GeoJSON formatted datasets a visualisation was created in Javascri
 \subsection{Application of Topic DM} \label{dm}
 A Naive Bayes (NB) classifier was created in order to predict ATM attacks. Naive Bayes classifiers provide probabilities for each class, in this case attacked or not attacked. These probabilities can be used to give an accurate prediction of the probability of an ATM attack.
 The Naive Bayes classifier was created using the Scikit-learn library for the Python programming language. Scikit-learn is a library that provides tools to setup, test and evaluate Machine learning algorithms. 
-The NB classifier was trained using the data available from *INSERT LINK ETC*. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable 'N_FREQ_ATK' which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: *INSTER FEATURES*. 
-
-
+The NB classifier was trained using the data available from [INSERT LINK ETC]. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable "N\_FREQ\_ATK" which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: [INSTERT FEATURES]. 
 
 \section{Results} \label{results}
 Following from \ref{method} (the method) a visualisation was developed in D3.js (\ref{dpvres}) together with a machine learning model created using a Naive Bayes classification method (\ref{dmres}).
@@ -542,13 +540,13 @@ The visualisation which was developed contains the outlines of the freguesias as
 {
 \centering
 \includegraphics[width=0.95\linewidth]{visualisation.png}\\
-\captionof{figure}{Visualisation of ATM attacks (red circles), Predicted ATM attacks (orange circles) and ATM locations (black dots) on the map of Lisbon. \cite{c3}}\label{fig:confusion}
+\captionof{figure}{Visualisation of ATM attacks (red circles), Predicted ATM attacks (orange circles) and ATM locations (black dots) on the map of Lisbon. \cite{c3}}\label{fig:visualisation}
 }
+
+\break
 
 
 \subsection{Results of Topic DM} \label{dmres}
-(TODO)
-
 {
 \begin{center}
 \centering
@@ -557,26 +555,36 @@ The visualisation which was developed contains the outlines of the freguesias as
 \toprule
 & Precision & Recall & F1-score & Support                  
 \\ \midrule
-\multicolumn{1}{|l|}{XX}  & 
-\multicolumn{1}{l|}{0\%} & 
-\multicolumn{1}{l|}{0\%} & 
-\multicolumn{1}{l|}{0\%} & 
-\multicolumn{1}{l|}{0} 
+\multicolumn{1}{|l|}{Not Attacked}  & 
+\multicolumn{1}{l|}{1.00\%} & 
+\multicolumn{1}{l|}{0.92\%} & 
+\multicolumn{1}{l|}{0.96\%} & 
+\multicolumn{1}{l|}{162} 
 \\ \midrule
 
-\multicolumn{1}{|l|}{XX} & 
-\multicolumn{1}{l|}{0\%} & 
-\multicolumn{1}{l|}{0\%} & 
-\multicolumn{1}{l|}{0\%} & 
-\multicolumn{1}{l|}{0} 
+\multicolumn{1}{|l|}{Attacked} & 
+\multicolumn{1}{l|}{0.59\%} & 
+\multicolumn{1}{l|}{1.00\%} & 
+\multicolumn{1}{l|}{0.75\%} & 
+\multicolumn{1}{l|}{19} 
 
 \\ \midrule
-avg / total & 0\% & 0\% & 0\% & 0                      
+avg / total & 0.96\% & 0.93\% & 0.94\% & 181                      
 
 \\ \bottomrule
 \end{tabular}
 \end{center}
 }
+
+The final model described in the previous chapter was evaluated using a test set of 181 ATM locations. Table \ref{fig:results} shows the performance metric of the model on the test set. The overall accuracy was 92.82\%. 
+
+{
+\centering
+\includegraphics[width=1\linewidth]{confusionmatrix.png}\\
+\captionof{figure}{Confusion matrix of the results. \cite{c3}}\label{fig:confusion}
+}
+
+(TODO)
 
 \section{Conclusion and Discussion} \label{results}
 According to the results from both the data visualisation and machine learning prediction, it is possible to accurately predict locations for ATM attacks and visualise the attacks with the geographical- and demographical features provided by the ATM attacks dataset.
