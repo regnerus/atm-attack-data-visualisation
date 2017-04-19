@@ -338,7 +338,8 @@
 \author{\IEEEauthorblockN{R. Fasel and B. Regnerus}
 \IEEEauthorblockA{Faculty of Electrical Engineering, Mathematics and Computer Science \\
 University of Twente\\
-7500 AE Enschede, The Netherlands}}
+7500 AE Enschede, The Netherlands}}
+
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -372,7 +373,8 @@ University of Twente\\
 
 
 % make the title area
-\maketitle
+\maketitle
+
 
 % no keywords
 
@@ -404,6 +406,7 @@ Provided for this project is a dataset from the European TREsPASS project  \cite
 For this research the most important features of the dataset are both the geographical- and demographical features. Those features can be used for both visualising attacks and predicting attacks using a classifier with those features as an input.
 
 \subsection{Research Questions} \label{questions}
+
 With the DataScience DM and DPV topics in mind this lead to the following research questions:
 
 \begin{displayquote}
@@ -418,6 +421,7 @@ This question is answered with the support of the following questions:
 \item How can ATM attacks be predicted using a Naive Bayes classifier?
 
 \end{itemize}
+
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -523,7 +527,11 @@ In this section we try to identify a good method for obtaining visualisation fro
 Using the two GeoJSON formatted datasets a visualisation was created in Javascript using D3.js. \cite{c5} The use of the D3.js library was chosen over other tools such as Tableau since it allows for more flexibility when developing visualisations. D3.js is able to read from the GeoJSON formatted files, using them as the datasource therefore no external database warehouse, such as MySQL, was needed. 
 
 \subsection{Application of Topic DM} \label{dm}
-(TODO)
+A Naive Bayes (NB) classifier was created in order to predict ATM attacks. Naive Bayes classifiers provide probabilities for each class, in this case attacked or not attacked. These probabilities can be used to give an accurate prediction of the probability of an ATM attack.
+The Naive Bayes classifier was created using the Scikit-learn library for the Python programming language. Scikit-learn is a library that provides tools to setup, test and evaluate Machine learning algorithms. 
+The NB classifier was trained using the data available from *INSERT LINK ETC*. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable 'N_FREQ_ATK' which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: *INSTER FEATURES*. 
+
+
 
 \section{Results} \label{results}
 Following from \ref{method} (the method) a visualisation was developed in D3.js (\ref{dpvres}) together with a machine learning model created using a Naive Bayes classification method (\ref{dmres}).
@@ -581,6 +589,7 @@ Since the data was labeled with latitude and longitude coordinates the visualisa
 
 Further research should be done to optimise the machine learning model even further. More datasources could be sourced as input features for the model. Furthermore there could be experimented with other types of classifiers to further improve the classification.
 
+
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
 % adjust value as needed - may need to be readjusted if
@@ -617,6 +626,7 @@ Further research should be done to optimise the machine learning model even furt
 M. Bostock, “D3.js - Data-Driven Documents.” [Online]. Available: https://d3js.org/. [Accessed: 14-Apr-2017]
 \bibitem{c6}
 regnerus, “regnerus/atm-attack-data-visualisation,” GitHub. [Online]. Available: https://github.com/regnerus/atm-attack-data-visualisation. [Accessed: 14-Apr-2017]
+
 
 \end{thebibliography}
 
