@@ -529,7 +529,8 @@ Using the two GeoJSON formatted datasets a visualisation was created in Javascri
 \subsection{Application of Topic DM} \label{dm}
 A Naive Bayes (NB) classifier was created in order to predict ATM attacks. Naive Bayes classifiers provide probabilities for each class, in this case attacked or not attacked. These probabilities can be used to give an accurate prediction of the probability of an ATM attack.
 The Naive Bayes classifier was created using the Scikit-learn library for the Python programming language. Scikit-learn is a library that provides tools to setup, test and evaluate Machine learning algorithms. 
-The NB classifier was trained using the data available from [INSERT LINK ETC]. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable "N\_FREQ\_ATK" which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: [INSTERT FEATURES]. 
+The NB classifier was trained using the data available from the European TREsPASS project  \cite{c2}. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable "N\_FREQ\_ATK" which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: "MWay_Dist", "NUMBER", "N_INCOME", "N_DENSITY", "N_AGE", "N_UNP_RATE", "N_COM_DENS", "Police_Dis". 
+
 
 \section{Results} \label{results}
 Following from \ref{method} (the method) a visualisation was developed in D3.js (\ref{dpvres}) together with a machine learning model created using a Naive Bayes classification method (\ref{dmres}).
@@ -584,7 +585,7 @@ The final model described in the previous chapter was evaluated using a test set
 \captionof{figure}{Confusion matrix of the results. \cite{c3}}\label{fig:confusion}
 }
 
-(TODO)
+The confusion matrix of the model on the test set can be seen in Figure \ref{fig:confusion}. It shows that the model never classified a attacked ATM as not attacked. It did however classify some ATMs that were not attacked as attacked. 
 
 \section{Conclusion and Discussion} \label{results}
 According to the results from both the data visualisation and machine learning prediction, it is possible to accurately predict locations for ATM attacks and visualise the attacks with the geographical- and demographical features provided by the ATM attacks dataset.
