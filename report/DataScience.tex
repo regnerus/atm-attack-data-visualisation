@@ -529,7 +529,7 @@ Using the two GeoJSON formatted datasets a visualisation was created in Javascri
 \subsection{Application of Topic DM} \label{dm}
 A Naive Bayes (NB) classifier was created in order to predict ATM attacks. Naive Bayes classifiers provide probabilities for each class, in this case attacked or not attacked. These probabilities can be used to give an accurate prediction of the probability of an ATM attack.
 The Naive Bayes classifier was created using the Scikit-learn library for the Python programming language. Scikit-learn is a library that provides tools to setup, test and evaluate Machine learning algorithms. 
-The NB classifier was trained using the data available from the European TREsPASS project  \cite{c2}. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable "N\_FREQ\_ATK" which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: "MWay_Dist", "NUMBER", "N_INCOME", "N_DENSITY", "N_AGE", "N_UNP_RATE", "N_COM_DENS", "Police_Dis". 
+The NB classifier was trained using the data available from the European TREsPASS project  \cite{c2}. The data consisted of ATM records that described properties of the ATM and most importantly if they were attacked and how many times. The class label was extracted from the variable "N\_FREQ\_ATK" which indicates if a ATM was attacked or not. Together with the class labels some features were selected from the ATM properties. These features included: "MWay\_Dist", "NUMBER", "N\_INCOME", "N\_DENSITY", "N\_AGE", "N\_UNP\_RATE", "N\_COM\_DENS", "Police\_Dis". 
 
 
 \section{Results} \label{results}
@@ -594,7 +594,7 @@ Since the data was labeled with latitude and longitude coordinates the visualisa
 
 (EXPLAIN FACTORS WHICH CONTRIBUTE TO ATTACKS)
 
-(EXPLAIN RESULTS CLASSIFIER)
+The classifier showed to be accurate in predicting ATM attacks. The classifier had some problems with falsely classfiyng not attacked ATMs as attacked. This is however not necessarily a flaw of the classification. The Naive Bayes classifier gives a probability if the ATM was attacked or not. This probability can be very high due to the properties of the ATM but it does not mean that it was attacked just that the probability is very high but probably was not attacked due to chance. This means that police departments can still use the classifier but not to predict where ATM attacks are going to happen. Instead they can use it to identify areas that have a high attack risk in order to improve them.   
 
 Further research should be done to optimise the machine learning model even further. More datasources could be sourced as input features for the model. Furthermore there could be experimented with other types of classifiers to further improve the classification.
 
