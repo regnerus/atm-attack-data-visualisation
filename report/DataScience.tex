@@ -614,9 +614,11 @@ According to the results from both the data visualisation and machine learning p
 
 Since the data was labeled with latitude and longitude coordinates the visualisation created in D3.js proves that it is possible to plot attack frequency and attacker success geographically. There are however a few drawbacks from the visualisation. Since some locations, for example a bank, have multiple ATMs at the same location, the circles overlap and therefore can distort the visualisation. In addition all features are labeled to a specific ATM location, therefore some locations have a lot of demographical data available while other places have little data available.
 
-The properties that contribute the most to the prediction are "Police\_Dis" and "MWay\_Dist. These results are also quite intuitive. One can easily understand why a criminal does not attack a ATM very near to a police station or why a criminal prefers to attack a ATM close to a motorway in order to escape quickly.
+
 
 The classifier showed to be accurate in predicting ATM attacks. The classifier had some problems with falsely classfiyng not attacked ATMs as attacked. This is however not necessarily a flaw of the classification. The Naive Bayes classifier gives a probability if the ATM was attacked or not. This probability can be very high due to the properties of the ATM but it does not mean that it was attacked just that the probability is very high but probably was not attacked due to chance. This means that police departments can still use the classifier but not to predict where ATM attacks are going to happen. Instead they can use it to identify areas that have a high attack risk in order to improve them.   
+
+The properties that contribute the most to the prediction are "Police\_Dis" and "MWay\_Dist. These results are also quite intuitive. One can easily understand why a criminal does not attack a ATM very near to a police station or why a criminal prefers to attack a ATM close to a motorway in order to escape quickly. Police departments can use these insights in order to decrease the probability of an attack by changing these important properties.  
 
 Further research should be done to optimise the machine learning model even further. More datasources could be sourced as input features for the model. Furthermore there could be experimented with other types of classifiers to further improve the classification.
 
