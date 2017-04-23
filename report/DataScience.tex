@@ -587,8 +587,7 @@ The final model described in the previous chapter was evaluated using a test set
 }
 
 The confusion matrix of the model on the test set can be seen in Figure \ref{fig:confusion}. It shows that the model never classified a attacked ATM as not attacked. It did however classify some ATMs that were not attacked as attacked. 
-
-
+
 {
 \begin{center}
 \centering
@@ -611,43 +610,45 @@ Coef    & Feature Name &  &  &  \\ \midrule
 
 Table \ref{informative} show the features orderd on how informative they are. The top feature is the most informative feature. According to this table the features "Police\_Dis" and "MWay\_Dist" contribute significantly more to the prediction than the other features.
 
+
 {
-\begin{table}[]
+\begin{center}
 \centering
-\caption{Example features}
+\captionof{table}{Example features}
 \label{examplefeatures}
 \begin{tabular}{lllll}
 \hline
-Feature      & Example 1 & Example 2 &  &  \\ \hline
-MWay\_Dist   & 1000      & 750       &  &  \\
-Police\_Dis  & 650       & 500       &  &  \\
-N\_UNP\_RATE & 2         & 2         &  &  \\
-N\_AGE       & 2         & 2         &  &  \\
-N\_INCOME    & 2         & 2         &  &  \\
-N\_DENSITY   & 2         & 2         &  &  \\
-N\_COM\_DENS & 2         & 2         &  &  \\
-NUMBER       & 2         & 2         &  &  \\ \hline
+Feature      & Example 1 & Example 2 & Example 3 &  \\ \hline
+MWay\_Dist   & 1000      & 730       &  1480 &  \\
+Police\_Dis  & 685       & 500       &  1020 &  \\
+N\_UNP\_RATE & 2         & 2         &  2 &  \\
+N\_AGE       & 2         & 2         &  2 &  \\
+N\_INCOME    & 2         & 2         &  2 &  \\
+N\_DENSITY   & 2         & 2         &  2 &  \\
+N\_COM\_DENS & 2         & 2         &  2 &  \\
+NUMBER       & 2         & 2         &  2 &
+\\ \bottomrule
 \end{tabular}
-\end{table}
+\end{center}
 }
 
 {
-\begin{table}[]
+\begin{center}
 \centering
-\caption{Example results}
+\captionof{table}{Example results}
 \label{exampleresults}
-\begin{tabular}{lll}
-             & Example 1 & Example 2 \\
-Attacked     & 0.9823    & 0.4715    \\
-Not Attacked & 0.0177    & 0.5285   
+\begin{tabular}{llll}
+\hline
+             & Example 1 & Example 2 & Example 3 \\ \hline
+Attacked     & 0.0916    & 0.2251 & 0.9364   \\
+Not Attacked & 0.9084    & 0.7749 & 0.0636  
+\\ \bottomrule
 \end{tabular}
-\end{table}
+\end{center}
 }
 
-Some example ATMs were made to test the ability of the classifier to generate attack probabilities the results can be seen in table \ref{exampleresults}. The values for the properties of the example ATMs can be found in table \ref{examplefeatures}/  
-
-
-
+Some example ATMs were made to test the ability of the classifier to generate attack probabilities the results can be seen in table \ref{exampleresults}. The values for the properties of the example ATMs can be found in table \ref{examplefeatures}. 
+
 
 \section{Conclusion and Discussion} \label{results}
 According to the results from both the data visualisation and machine learning prediction, it is possible to accurately predict locations for ATM attacks and visualise the attacks with the geographical- and demographical features provided by the ATM attacks dataset.
