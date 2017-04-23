@@ -727,8 +727,8 @@ function draw() {
 }
 
 queue()
-    .defer(request, "./datasets/results.geojson")
-    .defer(request, "./datasets/freguesia.geojson")
+    .defer(request, "./visualisation/datasets/results.geojson")
+    .defer(request, "./visualisation/datasets/freguesia.geojson")
     .await(function(error, atm, freguesia) {
         data = {
             'atm': atm,
