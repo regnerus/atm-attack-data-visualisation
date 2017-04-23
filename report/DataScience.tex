@@ -417,7 +417,7 @@ This question is answered with the support of the following questions:
 
 \begin{itemize}
 \item How can factors that contribute to attack frequency and attacker success be plotted geographically?
-\item Which factors contribute most to attack frequency and attacker success?
+\item Which factors contribute most to ATM locations being attacked?
 \item How can ATM attacks be predicted using a Naive Bayes classifier?
 
 \end{itemize}
@@ -587,10 +587,11 @@ The final model described in the previous chapter was evaluated using a test set
 
 The confusion matrix of the model on the test set can be seen in Figure \ref{fig:confusion}. It shows that the model never classified a attacked ATM as not attacked. It did however classify some ATMs that were not attacked as attacked. 
 
+
 {
-\begin{table}[]
+\begin{center}
 \centering
-\caption{Most Informative Features}
+\captionof{table}{Most Informative Features}
 \label{informative}
 \begin{tabular}{@{}lllll@{}}
 \toprule
@@ -604,7 +605,7 @@ Coef    & Feature Name &  &  &  \\ \midrule
 -6.6429 & N\_AGE       &  &  &  \\
 -7.2555 & NUMBER       &  &  &  \\ \bottomrule
 \end{tabular}
-\end{table}
+\end{center}
 }
 
 Table \ref{informative} show the features orderd on how informative they are. The top feature is the most informative feature. According to this table the features "Police\_Dis" and "MWay\_Dist" contribute significantly more to the prediction than the other features.
@@ -613,8 +614,6 @@ Table \ref{informative} show the features orderd on how informative they are. Th
 According to the results from both the data visualisation and machine learning prediction, it is possible to accurately predict locations for ATM attacks and visualise the attacks with the geographical- and demographical features provided by the ATM attacks dataset.
 
 Since the data was labeled with latitude and longitude coordinates the visualisation created in D3.js proves that it is possible to plot attack frequency and attacker success geographically. There are however a few drawbacks from the visualisation. Since some locations, for example a bank, have multiple ATMs at the same location, the circles overlap and therefore can distort the visualisation. In addition all features are labeled to a specific ATM location, therefore some locations have a lot of demographical data available while other places have little data available.
-
-
 
 The classifier showed to be accurate in predicting ATM attacks. The classifier had some problems with falsely classfiyng not attacked ATMs as attacked. This is however not necessarily a flaw of the classification. The Naive Bayes classifier gives a probability if the ATM was attacked or not. This probability can be very high due to the properties of the ATM but it does not mean that it was attacked just that the probability is very high but probably was not attacked due to chance. This means that police departments can still use the classifier but not to predict where ATM attacks are going to happen. Instead they can use it to identify areas that have a high attack risk in order to improve them.   
 
