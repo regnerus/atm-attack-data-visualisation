@@ -587,6 +587,24 @@ The final model described in the previous chapter was evaluated using a test set
 
 The confusion matrix of the model on the test set can be seen in Figure \ref{fig:confusion}. It shows that the model never classified a attacked ATM as not attacked. It did however classify some ATMs that were not attacked as attacked. 
 
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Coef    & Feature Name &  &  &  \\ \midrule
+-0.4678 & Police\_Dis  &  &  &  \\
+-1.0099 & MWay\_Dist   &  &  &  \\
+-5.8621 & N\_INCOME    &  &  &  \\
+-6.3765 & N\_UNP\_RATE &  &  &  \\
+-6.5414 & N\_DENSITY   &  &  &  \\
+-6.6055 & N\_COM\_DENS &  &  &  \\
+-6.6429 & N\_AGE       &  &  &  \\
+-7.2555 & NUMBER       &  &  &  \\ \bottomrule
+\end{tabular}
+\end{table}
+
 \section{Conclusion and Discussion} \label{results}
 According to the results from both the data visualisation and machine learning prediction, it is possible to accurately predict locations for ATM attacks and visualise the attacks with the geographical- and demographical features provided by the ATM attacks dataset.
 
